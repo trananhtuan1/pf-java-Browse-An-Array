@@ -1,9 +1,17 @@
+import java.util.Arrays;
+
 public class BrowseAnArray {
     public static void main(String[] args) {
         int[] array = createRandomArray(5);
+        int[] copiedArray = copyArray(array);
         for (int x : array) {
-            System.out.println(x);
+            System.out.print(x + "\t");
         }
+        System.out.println(" ");
+        for(int x : copiedArray){
+            System.out.print(x + "\t");
+        }
+
     }
 
     public static int[] createRandomArray(int legth) {
@@ -13,4 +21,13 @@ public class BrowseAnArray {
         }
         return numbers;
     }
+
+    public static int[] copyArray(int[] array){
+        int[] copyArray = new int[array.length];
+        for (int i = 0; i < array.length; i++){
+            copyArray[i] = array[i];
+        }
+        return copyArray;
+    }
+
 }
